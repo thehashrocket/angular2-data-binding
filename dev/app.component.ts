@@ -11,10 +11,11 @@ import {PropertyBindingComponent} from "./property-binding.component";
             <input type="text" [(ngModel)]="name">
             <input type="text" [(ngModel)]="age">
             <br/><br/>
-            <p>{{name}}</p>
+            
             <section class="child">
-                <my-property-binding [myName]="name" [myAge]="age"></my-property-binding>
+                <my-property-binding [myName]="name" [myAge]="age" (hobbiesChanged)="hobbies = $event"></my-property-binding>
             </section>
+            <p>My hobbies are {{hobbies}}</p>
         </section>
         
     `,
